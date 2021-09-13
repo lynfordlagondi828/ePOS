@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        body
+        {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        function EnableDisableTextBox(pmMethod) {
+            var selectedValue = pmMethod.options[pmMethod.selectedIndex].value;
+            var cash = document.getElementById("cash");
+            cash.disabled = selectedValue == 1 ? false : true;
+            if (!cash.disabled) {
+                cash.focus();
+            }
+        }
+    </script>
+    <span>Your favorite Bike model?</span>
+    <select id="pmMethod" onchange="EnableDisableTextBox(this)">
+        <option value="">select Payment Method</option>
+        <option value="1">Cash</option>
+        <option value="2">Credit</option>
+    </select>
+    <br />
+    <br />
+    Other:
+    <input type="number" id="cash" disabled="disabled" />
+</body>
+</html>
